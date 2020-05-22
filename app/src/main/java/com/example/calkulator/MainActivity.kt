@@ -36,14 +36,12 @@ class MainActivity : AppCompatActivity() {
             if(str.isNotEmpty()) math_operation.text = str.substring(0,str.length -1)
             result_text.text = "" }
 
-
         equal_btn.setOnClickListener{
-            val e: math_operation = ExpressionBuilder("3 * sin(y) - 2 / (x - 2)")
-            .build()
+            val e: Expresion = ExpressionBuilder(math_operation.text.toString())
+                .build()
             val result: Double = e.result_text()
+            result_text.text = e.result_text()
         }
-
-
 
 
 
