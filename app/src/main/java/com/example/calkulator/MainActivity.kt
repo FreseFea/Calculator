@@ -3,6 +3,7 @@ package com.example.calkulator
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
 import net.objecthunter.exp4j.operator.Operator
 
@@ -30,17 +31,18 @@ class MainActivity : AppCompatActivity() {
         clear_btn.setOnClickListener{
             math_operation.text = ""
             result_text.text = ""
-        }
         back_btn.setOnClickListener{
+        }
+
             val str = math_operation.text.toString()
             if(str.isNotEmpty()) math_operation.text = str.substring(0,str.length -1)
             result_text.text = "" }
 
         equal_btn.setOnClickListener{
-            val e: Expresion = ExpressionBuilder(math_operation.text.toString())
+            val e: Expression = ExpressionBuilder(math_operation.text.toString())
                 .build()
-            val result: Double = e.result_text()
-            result_text.text = e.result_text()
+            val result: Double = e.evaluate()
+            result_text.text = result.toString()
         }
 
 
