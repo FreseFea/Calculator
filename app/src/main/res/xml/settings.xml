@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <CheckBoxPreference
+        android:key="pref_sync"
+        android:title="Ты это увидел?"
+        android:summary="если нет, то не грусти"
+        android:defaultValue="true"
+        />
+    <com.kizitonwose.colorpreference.ColorPreference
+        android:defaultValue="@color/colorPrimary"
+        android:key="color_pref_circle"
+        android:summary="если нет, то не грусти"
+        android:title="Ты это увидел?"
+        app:colorChoices="@array/default_color_choice_values"
+        app:colorShape="circle"
+
+
+        />
+
+
+
+
+</PreferenceScreen>
