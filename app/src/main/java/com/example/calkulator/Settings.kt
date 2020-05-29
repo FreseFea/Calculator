@@ -10,7 +10,8 @@ import android.view.View
 import com.example.calkulator.R
 
 
-class PreferenceActivity : BaseActivity() {
+
+open class PreferenceActivity : BaseActivity() {
     protected fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -48,8 +49,7 @@ class PreferenceActivity : BaseActivity() {
             AlertDialog.Builder(activity)
                 .setView(colorView)
                 .setTitle("Choose Color")
-                .setPositiveButton(
-                    "SAVE"
+                .setPositiveButton("SAVE"
                 ) { dialogInterface, i -> (preference as ColorPreference).setValue(lobsterPicker.getColor()) }
                 .setNegativeButton("CLOSE", null)
                 .show()
